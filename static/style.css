@@ -5,10 +5,10 @@ body {
     text-align: center;
     background: linear-gradient(
         180deg,
-        #ff6599 0%,
-        #ff6599 35%,
-        #ff6599 70%,
-        #ff6599 100%
+        #ff84ad 0%,
+        #ff84ad 35%,
+        #ff84ad 70%,
+        #ff84ad 100%
     );
     position: relative;
 }
