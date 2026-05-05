@@ -5,10 +5,10 @@ body {
     text-align: center;
     background: linear-gradient(
         180deg,
-        #fff5f8 0%,
-        #ffe4ec 35%,
-        #ffd6e3 70%,
-        #ffc9db 100%
+        #ff6599 0%,
+        #ff6599 35%,
+        #ff6599 70%,
+        #ff6599 100%
     );
     position: relative;
 }
@@ -108,33 +108,4 @@ button:active {
 .message.show {
     opacity: 1;
     transform: translateY(0);
-}
-.sakura-top-left,
-.sakura-top-right {
-    position: absolute;
-    font-size: 70px;
-    opacity: 0.8;
-    z-index: 1;
-    animation: sway 5s ease-in-out infinite alternate;
-}
-
-.sakura-top-left {
-    top: 10px;
-    left: 20px;
-    transform: rotate(-15deg);
-}
-
-.sakura-top-right {
-    top: 10px;
-    right: 20px;
-    transform: rotate(15deg);
-}
-
-@keyframes sway {
-    from {
-        transform: rotate(-12deg);
-    }
-    to {
-        transform: rotate(12deg);
-    }
 }

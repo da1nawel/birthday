@@ -7,15 +7,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    
-<div class="sakura-top-left">🌸🌿🌸</div>
-<div class="sakura-top-right">🌸🌿🌸</div>
 
 <div class="container">
     <h1>🎉 С Днём Рождения! 🎉</h1>
-    <p>Желаю всегда быть такой красивой) 💖</p>
+    <p>Желаю хорошего настроения насегда) 💖</p>
     <button onclick="celebrate()">Нажми 🎁</button>
-    <div id="message" class="message"> Ты красивая , добрая , очеровательная , восхитительная , милая , блестящая , любимая , у тебя очень красивые глаза , голос , прекрасные волосы и сама ты прекрасная и красивая! 💖</div>
+    <div id="message" class="message"> Ты красивая , добрая , очеровательная , восхитительная , милая , блестящая , любимая , у тебя очень красивые глаза , голос , прекрасные волосы и сама ты прекрасная оставайся всегда такой же красивой и доброй)💋💖</div>
 </div>
 
 <audio id="music" src="{{ url_for('static', filename='music.mp3') }}"></audio>
@@ -43,7 +40,7 @@ document.getElementById("message").classList.add("show");
 
     // сердечки
     for (let i = 0; i < 30; i++) {
-        setTimeout(createHeart, i * 100);
+        setTimeout(createHeart, i * 10);
     }
 }
 
