@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Поздравление</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🎉 С Днём Рождения! 🎉</h1>
+    <p>Желаю всегда быть такой красивой) 💖</p>
+    <button onclick="celebrate()">Нажми 🎁</button>
+</div>
+
+<audio id="music" src="{{ url_for('static', filename='music.mp3') }}"></audio>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+function celebrate() {
+    const music = document.getElementById("music");
+    if (music) music.play();
+
+    // конфетти
+    if (typeof confetti !== "undefined") {
+        for (let i = 0; i < 3; i++) {
+            setTimeout(() => {
+                confetti({
+                    particleCount: 150,
+                    spread: 120,
+                    origin: { y: 0.6 }
+                });
+            }, i * 300);
+        }
+    }
+
+    // сердечки
+    for (let i = 0; i < 30; i++) {
+        setTimeout(createHeart, i * 100);
+    }
+}
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (20 + Math.random() * 30) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 4000);
+}
+</script>
+
+</body>
+</html>
