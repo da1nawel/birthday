@@ -21,46 +21,40 @@
 
 <script>
 function celebrate() {
-document.getElementById("message").classList.add("show");
     const music = document.getElementById("music");
     if (music) music.play();
 
-    // конфетти
+    // показать текст
+    const msg = document.getElementById("message");
+    if (msg) msg.classList.add("show");
+
+    // конфетти (если есть)
     if (typeof confetti !== "undefined") {
-        for (let i = 0; i < 3; i++) {
-            setTimeout(() => {
-                confetti({
-                    particleCount: 150,
-                    spread: 120,
-                    origin: { y: 0.6 }
-                });
-            }, i * 300);
-        }
+        confetti({
+            particleCount: 150,
+            spread: 120
+        });
     }
 
     // сердечки
     for (let i = 0; i < 25; i++) {
-    setTimeout(createHeart, i * 150);
-}
+        setTimeout(() => {
+            createHeart();
+        }, i * 150);
+    }
 }
 
-<script>
 function createHeart() {
     const heart = document.createElement("div");
-    heart.classList.add("heart");
+    heart.className = "heart";
     heart.innerHTML = "💖";
 
-    // случайная позиция по ширине
+    heart.style.position = "absolute";
     heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = "100vh";
 
-    // случайный размер
-    heart.style.fontSize = (15 + Math.random() * 35) + "px";
-
-    // случайная длительность анимации
+    heart.style.fontSize = (15 + Math.random() * 30) + "px";
     heart.style.animationDuration = (3 + Math.random() * 3) + "s";
-
-    // небольшое случайное смещение по X
-    heart.style.transform = `translateX(${Math.random() * 100 - 50}px)`;
 
     document.body.appendChild(heart);
 

@@ -67,7 +67,7 @@ button:active {
 /* сердечки */
 .heart {
     position: absolute;
-    animation: floatUp 4s linear forwards;
+    animation: floatUp linear forwards;
 }
 
 /* движение сердечек */
